@@ -243,7 +243,6 @@ def get_entity_node_save_bulk_query(
                 """
                     UNWIND $nodes AS node
                     MERGE (n:Entity {uuid: node.uuid})
-                    SET n:$(node.labels)
                     SET n = node
                     """
                 + save_embedding_query
